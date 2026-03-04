@@ -47,7 +47,7 @@ using namespace std;
 	   do {
 		   switch (choice) {
 		   case 1: {
-			   Client c1( "Mohamed", "12300012", 5000);
+			   Client c1(1, "Mohamed", "12300012", 5000);
 
 			   cout << "Your are in the Client's list :\n\n ";
 			   cout << "What do you need ? \n";
@@ -97,7 +97,7 @@ using namespace std;
 			   }
 
 			   case 4: {
-				   Client c2( "Ali", "13589700", 6000);
+				   Client c2(2, "Ali", "13589700", 6000);
 				   double amount;
 				   cout << "Now you can transfer an amount of money to another ,Continue .....\n \n";
 				   cout << "Notice -> the amount should be positive and less than or equal your balance . \n\n";

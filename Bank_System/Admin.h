@@ -5,7 +5,7 @@ class Admin : public Employee {
 public:
 	Admin() :Employee() {
 	}
-	Admin(string name, string password, double salary) :Employee(name, password, salary) {
+	Admin(int id, string name, string password, double salary) :Employee(id, name, password, salary) {
 	}
 	void Displayinfo() {
 
@@ -13,4 +13,3 @@ public:
 	}
 
 };
-

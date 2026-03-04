@@ -7,11 +7,9 @@ protected:
 public:
 	Employee() :Person() {
 		this->salary = 5000;
-
 	}
-	Employee(string name, string password, double salary) :Person(name, password) {
+	Employee(int id, string name, string password, double salary) :Person(id, name, password) {
 		this->salary = salary;
-
 
 	}
 	void setSalary(double salary) {
@@ -19,7 +17,7 @@ public:
 			this->salary = salary;
 		}
 		else {
-			cout << "Minimum salary should equal 5000 !...\n\n";
+			cout << "Minimum salary should equal 5000 !...\n";
 		}
 	}
 	double getSalary() {
@@ -27,10 +25,10 @@ public:
 	}
 	void Displayinfo() {
 
-		Person::Displayinfo();
-
-		cout << "Salary : " << salary << endl;
+		cout << "Name : " << name << endl;
+		cout << "Id  = " << id << endl;
+		cout << "Password :" << password << endl;
+		cout << "Salary = " << salary << endl;
 	}
 
 };
-

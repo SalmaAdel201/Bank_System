@@ -1,23 +1,17 @@
 #pragma once
 #include "Validation.h"
 
-int idHelper = 0;
-
-class Person : Validation {
+class Person {
 protected:
-
 	int id;
 	string name;
 	string password;
 public:
 	Person() {
-
-		idHelper++;
-		id = idHelper;
+		this->id = 0;
 	}
-	Person(string name, string password) {
-		idHelper++;
-		id = idHelper;
+	Person(int id, string name, string password) {
+		this->id = id;
 		this->name = name;
 		this->password = password;
 	}
@@ -25,21 +19,13 @@ public:
 		this->id = id;
 	}
 	void setName(string name) {
-		if (name.length() >= 4 && name.length() <= 20) {
+		if (Validation::validatName(name))
 			this->name = name;
-		}
-		else {
-			cout << "Invalid Name !....\n";
-		}
 	}
 	void setPassword(string password) {
-		if (password.length() >= 8 && password.length() <= 20)
-		{
+		if (Validation::validatpass(password))
 			this->password = password;
-		}
-		else {
-			cout << "Invalid Password !...\n";
-		}
+
 	}
 	int getId() {
 		return this->id;
@@ -51,12 +37,6 @@ public:
 	string getPassword() {
 		return this->password;
 	}
-	void Displayinfo() {
-		cout << "Name : " << name << endl;
-		cout << "Id  : " << id << endl;
-		cout << "Password :" << password << endl;
-	}
-
+	virtual void Displayinfo() = 0;
 
 };
-
