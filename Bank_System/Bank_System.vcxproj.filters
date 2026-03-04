@@ -36,7 +36,10 @@
     <ClCompile Include="DataSourceInterface.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="ParserClass.cpp">
+    <ClCompile Include="Parser.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="FilesHelper.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -59,7 +62,10 @@
     <ClInclude Include="DataSourceInterface.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="ParserClass.h">
+    <ClInclude Include="Parser.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="FilesHelper.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
