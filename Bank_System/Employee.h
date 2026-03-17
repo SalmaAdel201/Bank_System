@@ -1,5 +1,10 @@
 #pragma once
 #include "Person.h"
+#include "vector"
+#include "Client.h"
+
+static vector<Employee> allEmployees;
+static vector<Employee>::iterator EIt;
 
 class Employee :public Person {
 protected:
@@ -23,6 +28,7 @@ public:
 	double getSalary() {
 		return this->salary;
 	}
+ 
 	void Displayinfo() {
 
 		cout << "Name : " << name << endl;
@@ -31,4 +37,29 @@ public:
 		cout << "Salary = " << salary << endl;
 	}
 
+	void addClient(Client& client) {
+		allClients.push_back(client);
+	}
+	Client* searchClient(int id) {
+		for (CIt = allClients.begin(); CIt != allClients.end(); CIt++) {
+			if (CIt->getId() == id) {
+				return &(*CIt);
+			}
+			return nullptr;
+		}
+	}
+	void listClient() {
+		for (CIt = allClients.begin(); CIt!= allClients.end(); CIt++) {
+			CIt->displayinfo();
+		}
+	}
+	void editClient(Client* c, string name, string password, double balance) {
+		c->setName(name);
+		c->setPassword(password);
+		c->setBalance(balance);
+
+	}
+
+
 };
+

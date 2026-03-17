@@ -11,5 +11,33 @@ public:
 
 		Employee::Displayinfo();
 	}
+	void addEmployee(Employee& employee) {
+		allEmployees.push_back(employee);
+	}
+	Employee* searchEmployee(int id) {
+		for (EIt = allEmployees.begin(); EIt != allEmployees.end(); EIt++ ) {
+			if (EIt->getId() == id) {
+				return &(*EIt);
+			}
+		}
+		return nullptr;
+	}
+	void editEmployee(int id, string name, string password, double salary) {
+		Employee* e = searchEmployee(id);
+		if (e != nullptr) {
+			e->setId(id);
+			e->setName(name);
+			e->setPassword(password);
+			e->setSalary(salary);
+
+		}
+
+
+	}
+	void listEmployee() {
+		for (EIt = allEmployees.begin(); EIt != allEmployees.end(); EIt++) {
+			EIt->displayinfo();
+		}
+	}
 
 };

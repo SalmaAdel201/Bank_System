@@ -1,6 +1,9 @@
 #pragma once
 #include "Person.h"
+#include "Client.h"
 
+static vector<Client> allClients;
+static vector <Client> ::iterator CIt;
 
 class Client :public Person {
 private:
