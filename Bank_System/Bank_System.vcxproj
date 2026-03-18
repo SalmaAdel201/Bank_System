@@ -129,6 +129,7 @@
     <ClCompile Include="ClientManager.cpp" />
     <ClCompile Include="DataSourceInterface.cpp" />
     <ClCompile Include="Employee.cpp" />
+    <ClCompile Include="EmployeeManager.cpp" />
     <ClCompile Include="FileManager.cpp" />
     <ClCompile Include="FilesHelper.cpp" />
     <ClCompile Include="Parser.cpp" />
@@ -142,6 +143,7 @@
     <ClInclude Include="ClientManager.h" />
     <ClInclude Include="DataSourceInterface.h" />
     <ClInclude Include="Employee.h" />
+    <ClInclude Include="EmployeeManager.h" />
     <ClInclude Include="FileManager.h" />
     <ClInclude Include="FilesHelper.h" />
     <ClInclude Include="Parser.h" />

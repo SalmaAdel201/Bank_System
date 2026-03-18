@@ -4,6 +4,7 @@
 #include <vector>
 #include <string>
 
+
 class ClientManager
 {
 private:
@@ -42,6 +43,7 @@ public:
         }
         return nullptr;
     }
+
     static void back_exit(Client* client) {
         int c;
         do
@@ -115,8 +117,7 @@ public:
             }
             break;
         }
-
-            break;
+              break;
 
         case 7:
             return false;
@@ -130,7 +131,8 @@ public:
         return true;
     }
 
-
-
-
 };
+
+// Define static members
+vector<Client> ClientManager::allClients;
+vector<Client>::iterator ClientManager::cIt;

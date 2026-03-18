@@ -40,7 +40,7 @@ public:
 		for (int i = 0; i < password.size(); i++)
 		{
 			if (password[i] == ' ') {
-				cout << "without space !! .." << endl;
+				cout << "Without space !! .." << endl;
 				return false;
 			}
 		}
@@ -48,18 +48,122 @@ public:
 	}
 	static bool validatBalance(double balance) {
 		if (balance < 1500) {
-			cout << "min balance 1500" << endl;
+			cout << "Min balance 1500" << endl;
 			return false;
 		}
 		return true;
 	}
 	static bool validatSalary(double salary) {
 		if (salary < 1500) {
-			cout << "min salary 1500 !!" << endl;
+			cout << "Min salary 1500 !!" << endl;
 			return false;
 		}
 		return true;
 	}
+	static double getDoubleNumber(string msg) {
+		double value;
+		while (true) {
+			cout << msg;
+			cin >> value;
+			if (cin.fail()) {
+				cout << "Invalid input. Please enter a valid number." << endl;
+				cin.clear();
+				cin.ignore(numeric_limits<streamsize>::max(), '\n');
+			}
+			else {
+				cin.ignore(numeric_limits<streamsize>::max(), '\n');
+				return value;
+			}
+		}
+	}
+	static int getIntNumber(string msg) {
+		int value;
+		while (true) {
+			cout << msg;
+			cin >> value;
+			if (cin.fail()) {
+				cout << "Invalid input. Please enter a valid number." << endl;
+				cin.clear();
+				cin.ignore(numeric_limits<streamsize>::max(), '\n');
+			}
+			else {
+				cin.ignore(numeric_limits<streamsize>::max(), '\n');
+				return value;
+			}
+		}
+	}
+	static string enterName(string msg) {
+		string name;
+		do {
+			cout << msg;
+			getline(cin, name);
+		} while (!validatName(name));
+		return name;
+	}
+	static string enterPassword(string msg) {
+		string pass;
+		do {
+			cout << msg;
+			getline(cin, pass);
+		} while (!validatpass(pass));
+		return pass;
+	}
+	static double enterBalance(string msg) {
+		double balance;
+		do {
+			cout << msg;
+			cin >> balance;
+		} while (!validatBalance(balance));
+		return balance;
+	}
+	static double enterSalary(string msg) {
+		double salary;
+		do {
+			cout << msg;
+			cin >> salary;
+		} while (!validatSalary(salary));
+		return salary;
+	}
 
+
+	static double getDoubleNumber(string msg) {
+		double value;
+		while (true) {
+			cout << msg;
+			cin >> value;
+
+			if (cin.fail()) {
+				cout << "invalid input please enter valid number!" << endl;
+
+
+				cin.clear();
+
+				cin.ignore(numeric_limits<streamsize>::max(), '\n');
+			}
+			else {
+				cin.ignore(numeric_limits<streamsize>::max(), '\n');
+				return value;
+			}
+		}
+	}
+	static int getIntNumber(string msg) {
+		int value;
+		while (true) {
+			cout << msg;
+			cin >> value;
+			if (cin.fail()) {
+				cout << "invalid input please enter valid number!" << endl;
+
+
+				cin.clear();
+
+				cin.ignore(numeric_limits<streamsize>::max(), '\n');
+			}
+			else {
+				cin.ignore(numeric_limits<streamsize>::max(), '\n');
+				return value;
+			}
+		}
+	}
 
 };
