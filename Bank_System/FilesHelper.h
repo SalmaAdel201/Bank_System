@@ -1,14 +1,17 @@
 #pragma once
 #include "Parser.h"
 
+#define C_FILE_PATH "Data/ClientData.txt"
+#define E_FILE_PATH "Data/EmployeeData.txt"
+#define A_FILE_PATH "Data/AdminData.txt"
+
+/// file for id
+#define CID_FILE_PATH "Data/LastClient'sID.txt"
+#define EID_FILE_PATH "Data/LastEmployee'sID.txt"
+#define AID_FILE_PATH "Data/LastAdmin'sID.txt"
+
 class FilesHelper {
 private:
-    static string clientsFile;
-    static string employeesFile;
-    static string adminsFile;
-    static string lastClientId;
-    static string lastEmployeeId;
-    static string lastAdminId;
     static void saveLastID(string fname, int id) {
         ofstream file(fname);
         if (file.is_open()) {
@@ -31,7 +34,7 @@ private:
     }
 public:
     static void saveClient(Client c) {
-        ofstream out(clientsFile, ios::app);
+        ofstream out(C_FILE_PATH, ios::app);
 
         if (out.is_open()) {
             out << c.getId() << ","
@@ -40,7 +43,7 @@ public:
                 << c.getBalance() << endl;
             out.close();
 
-            saveLastID(lastClientId, c.getId());
+            saveLastID(CID_FILE_PATH, c.getId());
 
             cout << "Client saved successfully :)" << endl;
         }
@@ -49,7 +52,7 @@ public:
         }
     }
     static void saveEmployee(Employee e) {
-        ofstream out(employeesFile, ios::app);
+        ofstream out(E_FILE_PATH, ios::app);
 
         if (out.is_open()) {
             out << e.getId() << ","
@@ -58,11 +61,11 @@ public:
                 << e.getSalary() << endl;
             out.close();
 
-            saveLastID(lastEmployeeId, e.getId());
+            saveLastID(EID_FILE_PATH, e.getId());
         }
     }
     static void saveAdmin(Admin a) {
-        ofstream out(adminsFile, ios::app);
+        ofstream out(A_FILE_PATH, ios::app);
 
         if (out.is_open()) {
             out << a.getId() << ","
@@ -71,12 +74,12 @@ public:
                 << a.getSalary() << endl;
             out.close();
 
-            saveLastID(lastAdminId, a.getId());
+            saveLastID(AID_FILE_PATH, a.getId());
         }
     }
 
     static void getClients() {
-        ifstream in(clientsFile);
+        ifstream in(C_FILE_PATH);
         string line;
 
         cout << "\n========== All Clients ==========\n";
@@ -96,7 +99,7 @@ public:
         }
     }
     static void getEmployees() {
-        ifstream in(employeesFile);
+        ifstream in(E_FILE_PATH);
         string line;
 
         cout << "\n========== All Employees ==========\n";
@@ -113,7 +116,7 @@ public:
         }
     }
     static void getAdmins() {
-        ifstream in(adminsFile);
+        ifstream in(A_FILE_PATH);
         string line;
 
         cout << "\n========== All Admins ==========\n";
@@ -144,10 +147,3 @@ public:
         return getLastID(fname);
     }
 };
-string FilesHelper::clientsFile = "clients.txt";
-string FilesHelper::employeesFile = "employees.txt";
-string FilesHelper::adminsFile = "admins.txt";
-string FilesHelper::lastClientId = "last_client.txt";
-string FilesHelper::lastEmployeeId = "last_emp.txt";
-string FilesHelper::lastAdminId = "last_admin.txt";
-

@@ -2,9 +2,6 @@
 #include "Person.h"
 #include "Client.h"
 
-static vector<Client> allClients;
-static vector <Client> ::iterator CIt;
-
 class Client :public Person {
 private:
 	double balance;
@@ -67,3 +64,5 @@ public:
 	}
 
 };
+static vector<Client> allClients;
+static vector <Client> ::iterator CIt;

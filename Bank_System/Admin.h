@@ -1,6 +1,7 @@
 #pragma once
 #include "Employee.h"
 
+
 class Admin : public Employee {
 public:
 	Admin() :Employee() {
@@ -41,3 +42,5 @@ public:
 	}
 
 };
+static vector <Admin> allAdmins;
+static vector<Admin>::iterator AIt;

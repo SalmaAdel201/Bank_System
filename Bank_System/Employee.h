@@ -3,8 +3,6 @@
 #include "vector"
 #include "Client.h"
 
-static vector<Employee> allEmployees;
-static vector<Employee>::iterator EIt;
 
 class Employee :public Person {
 protected:
@@ -62,4 +60,6 @@ public:
 
 
 };
+static vector<Employee> allEmployees;
+static vector<Employee>::iterator EIt;
 
